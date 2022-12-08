@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+ <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+ <div class="center">
+  <div class="btn">
+   <div class="play">
+   </div> <!-- play -->
+   <p>play video</p>
+  </div> <!-- btn -->
+ </div> <!-- center -->
+ 
+ <div class="clip">
+  <video src="taryn-elliott-.mp4" controls></video>
+  <div class="close">Close</div> 
+ </div>
+ 
+ <script>
+  let btn = document.querySelector('.btn');
+  let clip = document.querySelector('.clip');
+  let close = document.querySelector('.close');
+  let video = document.querySelector('video');
+
+  btn.addEventListener('click', function() {
+   btn.classList.add('active');
+   clip.classList.add('active');
+   video.play(); 
+   video.currentTime= 0; 
+
+  })
+
+  close.onclick = function() {
+   btn.classList.remove('active');
+   clip.classList.remove('active');
+   video.pause(); 
+   document.body.style.backgroundColor = 'black';
+  }
+ </script>
+</body>
+</html>
